@@ -54,7 +54,7 @@ export type GroupTree = Pick<_GroupTree, "id" | "name"> & {
 // Get CSRF Token from Cookie set by Django
 // see https://docs.djangoproject.com/en/3.2/ref/csrf/
 function getCsrfToken(): string {
-  return Cookies.get("csrftoken");
+  return JSON.parse(Cookies.get("csrftoken"));
 }
 
 /**
